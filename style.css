@@ -1,0 +1,15 @@
+.containerCalculator {
+    display: inline-block;
+    border: 2px solid;
+    justify-items: center;
+}
+.calBtns {
+    display: flex;
+}
+.numBtns1 {
+    
+}
+.num0andDecimal {
+    display: flex;
+}
+
