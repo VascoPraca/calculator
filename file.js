@@ -1,33 +1,67 @@
-let btn1 = document.querySelector('#btn1'),
-    btn2 = document.querySelector('#btn2'),
-    btn3 = document.querySelector('#btn3'),
-    btn4 = document.querySelector('#btn4'),
-    btn5 = document.querySelector('#btn5'),
-    btn6 = document.querySelector('#btn6'),
-    btn7 = document.querySelector('#btn7'),
-    btn8 = document.querySelector('#btn8'),
-    btn9 = document.querySelector('#btn9'),
-    btn0 = document.querySelector('#btn0');
 
-function operation (num, operator, num2){
+let inputArray = [];
 
+
+function operate () {
+    if (inputArray.length >= 3) {
+        let result = calculateResult();
+        document.getElementById('displayScreen').innerHTML = result;
+        inputArray = [result.toString()];
+    }
 }
 
-const add = function (x,y){
+
+function add (x, y) {
     return x + y;
 }
-const subtract = function (x,y){
+function subtract (){
     return x - y;
 }
-const multiply = function (x,y){
+function multiply (){
     return x * y;
 }
-const divide = function (x,y){
+function divide (){
     return x / y;
 }
 
+function calculateResult() {
+    let expression = inputArray.join('');
 
-function displayNums(){
-    let displayScreen = document.querySelector('#displayScreen');
-    btn1.style.display = displayScreen; 
+    let parts = expression.split(/(\+|\-|\*|\/)/g);
+
+    let result = parseFloat(parts[0]);
+
+    for (let i = 1; i < parts.length; i += 2) {
+        let operator = parts[i];
+        let num = parseFloat(parts[i+1]);
+
+        if (operator === '+') {
+            result += num;
+        } else if (operator === "-") {
+            result -= num;
+        } else if (operator === "*") {
+            result *= num;
+        } else if (operator === "/") {
+            result /= num;
+        }
+    }
+    return result;
 }
+
+function displayNums(button){
+    let x = button.value;
+    inputArray.push(x);//Add digit to array
+    document.getElementById('displayScreen').innerHTML = inputArray.join(''); //Update the display
+}
+function clearDisplay(){
+    document.getElementById('displayScreen').innerHTML = '';
+    inputArray = []; //Clear inputArray
+}
+
+document.querySelectorAll('#keypad').forEach(button => {
+    button.addEventListener('click', () => {
+        inputArray.push(button.value); // Add the operator to the array
+        document.getElementById('displayScreen').innerHTML = inputArray.join(''); // Update the display
+        operate(); // Perform calculation immediately after operator press
+    });
+});

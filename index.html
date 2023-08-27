@@ -9,34 +9,30 @@
 </head>
 <body>
     <div class="containerCalculator">
-        <div id="displayScreen" style="display: none;">
-            
+        <div class="displayScreen">
+            <p id="displayScreen"></p>
         </div>
-        <div class="calBtns">
-            <button id="btnAC">AC</button>
+        <div id="keypad">
+            <button id="btnAC" onclick="clearDisplay()">AC</button>
             <button id="btnDivision">/</button>
             <button id="btnMultiply">x</button>
             <button id="btnSubtract">-</button>
-            <button id="btnAddition">+</button>
-            <button id="btnOperation">=</button>
-        </div>
-        <div class="numBtns1">
-            <button id="btn1" onclick="displayNums()">1</button>
-            <button id="btn2">2</button>
-            <button id="btn3">3</button>
-        </div>
-        <div class="numBtns2">    
-            <button id="btn4">4</button>
-            <button id="btn5">5</button>
-            <button id="btn6">6</button>
-        </div>
-        <div class="numBtns3">
-            <button id="btn7">7</button>
-            <button id="btn8">8</button>
-            <button id="btn9">9</button>
-        </div>
-        <div class="num0andDecimal">
-            <button id="btn0">0</button>
+            <br>
+            <button id="btn1" onclick="displayNums(this)" value=1>1</button>
+            <button id="btn2" onclick="displayNums(this)" value=2>2</button>
+            <button id="btn3" onclick="displayNums(this)" value=3>3</button>
+            <button id="btnSum" onclick="displayNums(this)">+</button>
+            <br>
+            <button id="btn4" onclick="displayNums(this)" value=4>4</button>
+            <button id="btn5" onclick="displayNums(this)" value=5>5</button>
+            <button id="btn6" onclick="displayNums(this)" value=6>6</button>
+            <button id="btnOperation" onclick="displayNums(this)">=</button>
+            <br>
+            <button id="btn7" onclick="displayNums(this)" value=7>7</button>
+            <button id="btn8" onclick="displayNums(this)" value=8>8</button>
+            <button id="btn9" onclick="displayNums(this)" value=9>9</button>
+            <br>
+            <button id="btn0" onclick="displayNums(this)" value=0>0</button>
             <button id="btnComma">,</button>
         </div>
 

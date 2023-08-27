@@ -1,15 +1,34 @@
 .containerCalculator {
-    display: inline-block;
+    display: inline-table;
     border: 2px solid;
     justify-items: center;
+    padding: 0;
+    max-width: 150px;
+    width: 100%;
 }
-.calBtns {
-    display: flex;
+#keypad {
+    text-align: center;
+    margin: 4%;
+    border: 2px solid;
 }
-.numBtns1 {
-    
-}
+
 .num0andDecimal {
     display: flex;
+}
+#displayScreen {
+    text-align: right;
+    width: 80%;
+    margin: 1%;
+}
+.displayScreen {
+    display: flex;
+    margin: 2%;
+    padding: 10px;
+    border: 2px solid;
+}
+#btnSum {
+    height: 100%;
+    text-align: center;
+    padding: 20px 10px;
 }
 
