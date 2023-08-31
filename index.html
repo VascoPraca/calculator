@@ -4,36 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="file.js" defer></script>
+    <script src="calculator.js" defer></script>
     <title>Calculator</title>
 </head>
 <body>
     <div class="containerCalculator">
-        <div class="displayScreen">
-            <p id="displayScreen"></p>
-        </div>
+        <input type="text" id="result" disabled>
         <div id="keypad">
-            <button id="btnAC" onclick="clearDisplay()">AC</button>
-            <button id="btnDivision">/</button>
-            <button id="btnMultiply">x</button>
-            <button id="btnSubtract">-</button>
-            <br>
-            <button id="btn1" onclick="displayNums(this)" value=1>1</button>
-            <button id="btn2" onclick="displayNums(this)" value=2>2</button>
-            <button id="btn3" onclick="displayNums(this)" value=3>3</button>
-            <button id="btnSum" onclick="displayNums(this)">+</button>
-            <br>
-            <button id="btn4" onclick="displayNums(this)" value=4>4</button>
-            <button id="btn5" onclick="displayNums(this)" value=5>5</button>
-            <button id="btn6" onclick="displayNums(this)" value=6>6</button>
-            <button id="btnOperation" onclick="displayNums(this)">=</button>
-            <br>
-            <button id="btn7" onclick="displayNums(this)" value=7>7</button>
-            <button id="btn8" onclick="displayNums(this)" value=8>8</button>
-            <button id="btn9" onclick="displayNums(this)" value=9>9</button>
-            <br>
-            <button id="btn0" onclick="displayNums(this)" value=0>0</button>
-            <button id="btnComma">,</button>
+            <!-- Number buttons -->
+            <button class="numberBtn" onclick="numberBtnClick('1')">1</button>
+            <button class="numberBtn" onclick="numberBtnClick('2')">2</button>
+            <button class="numberBtn" onclick="numberBtnClick('3')">3</button>
+            <button class="numberBtn" onclick="numberBtnClick('4')">4</button>
+            <button class="numberBtn" onclick="numberBtnClick('5')">5</button>
+            <button class="numberBtn" onclick="numberBtnClick('6')">6</button>
+            <button class="numberBtn" onclick="numberBtnClick('7')">7</button>
+            <button class="numberBtn" onclick="numberBtnClick('8')">8</button>
+            <button class="numberBtn" onclick="numberBtnClick('9')">9</button>
+            <button class="numberBtn" onclick="numberBtnClick('0')">0</button>
+            
+            <!-- Operator buttons -->
+            <button class="operator" onclick="operate('+')">+</button>
+            <button class="operator" onclick="operate('-')">-</button>
+            <button class="operator" onclick="operate('*')">x</button>
+            <button class="operator" onclick="operate('/')">/</button>
+
+            <!-- Equal and Clear buttons -->
+            <button id="equals" onclick="equalsBtnClick()">=</button>
+            <button id="clear" onclick="clearDisplay()">C</button>
         </div>
 
     </div>
